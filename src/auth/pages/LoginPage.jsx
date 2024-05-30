@@ -8,15 +8,16 @@ export const LoginPage = () => {
     const { login } = useContext(AuthContext);
 
     const onLogin = () => {
+        const lastPath = localStorage.getItem('lastPath') || '/';
         login('Martin Rodriguez');
-        navigate('/marvel', { replace: true });
+        navigate(lastPath, { replace: true });
     };
     return (
-        <div className="container mt-5">
+        <div className='container mt-5'>
             <h1>Login</h1>
             <hr />
 
-            <button className="btn btn-primary" onClick={onLogin}>
+            <button className='btn btn-primary' onClick={onLogin}>
                 Login
             </button>
         </div>
